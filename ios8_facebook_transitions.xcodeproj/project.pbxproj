@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20B07DB219D38E1200BF5B5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B07DB119D38E1200BF5B5B /* AppDelegate.swift */; };
+		20B07DB419D38E1200BF5B5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B07DB319D38E1200BF5B5B /* ViewController.swift */; };
+		20B07DB719D38E1200BF5B5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B07DB519D38E1200BF5B5B /* Main.storyboard */; };
+		20B07DB919D38E1200BF5B5B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B07DB819D38E1200BF5B5B /* Images.xcassets */; };
+		20B07DBC19D38E1200BF5B5B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B07DBA19D38E1200BF5B5B /* LaunchScreen.xib */; };
+		20B07DC819D38E1200BF5B5B /* ios8_facebook_transitionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B07DC719D38E1200BF5B5B /* ios8_facebook_transitionsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20B07DC219D38E1200BF5B5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20B07DA419D38E1200BF5B5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20B07DAB19D38E1200BF5B5B;
+			remoteInfo = ios8_facebook_transitions;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20B07DAC19D38E1200BF5B5B /* ios8_facebook_transitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios8_facebook_transitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20B07DB019D38E1200BF5B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20B07DB119D38E1200BF5B5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20B07DB319D38E1200BF5B5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20B07DB619D38E1200BF5B5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20B07DB819D38E1200BF5B5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		20B07DBB19D38E1200BF5B5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		20B07DC119D38E1200BF5B5B /* ios8_facebook_transitionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios8_facebook_transitionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20B07DC619D38E1200BF5B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20B07DC719D38E1200BF5B5B /* ios8_facebook_transitionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios8_facebook_transitionsTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20B07DA919D38E1200BF5B5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B07DBE19D38E1200BF5B5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20B07DA319D38E1200BF5B5B = {
+			isa = PBXGroup;
+			children = (
+				20B07DAE19D38E1200BF5B5B /* ios8_facebook_transitions */,
+				20B07DC419D38E1200BF5B5B /* ios8_facebook_transitionsTests */,
+				20B07DAD19D38E1200BF5B5B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20B07DAD19D38E1200BF5B5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20B07DAC19D38E1200BF5B5B /* ios8_facebook_transitions.app */,
+				20B07DC119D38E1200BF5B5B /* ios8_facebook_transitionsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20B07DAE19D38E1200BF5B5B /* ios8_facebook_transitions */ = {
+			isa = PBXGroup;
+			children = (
+				20B07DB119D38E1200BF5B5B /* AppDelegate.swift */,
+				20B07DB319D38E1200BF5B5B /* ViewController.swift */,
+				20B07DB519D38E1200BF5B5B /* Main.storyboard */,
+				20B07DB819D38E1200BF5B5B /* Images.xcassets */,
+				20B07DBA19D38E1200BF5B5B /* LaunchScreen.xib */,
+				20B07DAF19D38E1200BF5B5B /* Supporting Files */,
+			);
+			path = ios8_facebook_transitions;
+			sourceTree = "<group>";
+		};
+		20B07DAF19D38E1200BF5B5B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20B07DB019D38E1200BF5B5B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20B07DC419D38E1200BF5B5B /* ios8_facebook_transitionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				20B07DC719D38E1200BF5B5B /* ios8_facebook_transitionsTests.swift */,
+				20B07DC519D38E1200BF5B5B /* Supporting Files */,
+			);
+			path = ios8_facebook_transitionsTests;
+			sourceTree = "<group>";
+		};
+		20B07DC519D38E1200BF5B5B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20B07DC619D38E1200BF5B5B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20B07DAB19D38E1200BF5B5B /* ios8_facebook_transitions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20B07DCB19D38E1200BF5B5B /* Build configuration list for PBXNativeTarget "ios8_facebook_transitions" */;
+			buildPhases = (
+				20B07DA819D38E1200BF5B5B /* Sources */,
+				20B07DA919D38E1200BF5B5B /* Frameworks */,
+				20B07DAA19D38E1200BF5B5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ios8_facebook_transitions;
+			productName = ios8_facebook_transitions;
+			productReference = 20B07DAC19D38E1200BF5B5B /* ios8_facebook_transitions.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20B07DC019D38E1200BF5B5B /* ios8_facebook_transitionsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20B07DCE19D38E1200BF5B5B /* Build configuration list for PBXNativeTarget "ios8_facebook_transitionsTests" */;
+			buildPhases = (
+				20B07DBD19D38E1200BF5B5B /* Sources */,
+				20B07DBE19D38E1200BF5B5B /* Frameworks */,
+				20B07DBF19D38E1200BF5B5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20B07DC319D38E1200BF5B5B /* PBXTargetDependency */,
+			);
+			name = ios8_facebook_transitionsTests;
+			productName = ios8_facebook_transitionsTests;
+			productReference = 20B07DC119D38E1200BF5B5B /* ios8_facebook_transitionsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20B07DA419D38E1200BF5B5B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Stanley Ng";
+				TargetAttributes = {
+					20B07DAB19D38E1200BF5B5B = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					20B07DC019D38E1200BF5B5B = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 20B07DAB19D38E1200BF5B5B;
+					};
+				};
+			};
+			buildConfigurationList = 20B07DA719D38E1200BF5B5B /* Build configuration list for PBXProject "ios8_facebook_transitions" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20B07DA319D38E1200BF5B5B;
+			productRefGroup = 20B07DAD19D38E1200BF5B5B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20B07DAB19D38E1200BF5B5B /* ios8_facebook_transitions */,
+				20B07DC019D38E1200BF5B5B /* ios8_facebook_transitionsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20B07DAA19D38E1200BF5B5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B07DB719D38E1200BF5B5B /* Main.storyboard in Resources */,
+				20B07DBC19D38E1200BF5B5B /* LaunchScreen.xib in Resources */,
+				20B07DB919D38E1200BF5B5B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B07DBF19D38E1200BF5B5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20B07DA819D38E1200BF5B5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B07DB419D38E1200BF5B5B /* ViewController.swift in Sources */,
+				20B07DB219D38E1200BF5B5B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B07DBD19D38E1200BF5B5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B07DC819D38E1200BF5B5B /* ios8_facebook_transitionsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20B07DC319D38E1200BF5B5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20B07DAB19D38E1200BF5B5B /* ios8_facebook_transitions */;
+			targetProxy = 20B07DC219D38E1200BF5B5B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		20B07DB519D38E1200BF5B5B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20B07DB619D38E1200BF5B5B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		20B07DBA19D38E1200BF5B5B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20B07DBB19D38E1200BF5B5B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20B07DC919D38E1200BF5B5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20B07DCA19D38E1200BF5B5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20B07DCC19D38E1200BF5B5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ios8_facebook_transitions/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		20B07DCD19D38E1200BF5B5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ios8_facebook_transitions/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		20B07DCF19D38E1200BF5B5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ios8_facebook_transitionsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios8_facebook_transitions.app/ios8_facebook_transitions";
+			};
+			name = Debug;
+		};
+		20B07DD019D38E1200BF5B5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ios8_facebook_transitionsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios8_facebook_transitions.app/ios8_facebook_transitions";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20B07DA719D38E1200BF5B5B /* Build configuration list for PBXProject "ios8_facebook_transitions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B07DC919D38E1200BF5B5B /* Debug */,
+				20B07DCA19D38E1200BF5B5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20B07DCB19D38E1200BF5B5B /* Build configuration list for PBXNativeTarget "ios8_facebook_transitions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B07DCC19D38E1200BF5B5B /* Debug */,
+				20B07DCD19D38E1200BF5B5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		20B07DCE19D38E1200BF5B5B /* Build configuration list for PBXNativeTarget "ios8_facebook_transitionsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B07DCF19D38E1200BF5B5B /* Debug */,
+				20B07DD019D38E1200BF5B5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20B07DA419D38E1200BF5B5B /* Project object */;
+}
