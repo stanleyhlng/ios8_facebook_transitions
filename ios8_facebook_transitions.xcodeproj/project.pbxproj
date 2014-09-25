@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202C277819D3964A009409BF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C277719D3964A009409BF /* FeedViewController.swift */; };
 		20B07DB219D38E1200BF5B5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B07DB119D38E1200BF5B5B /* AppDelegate.swift */; };
 		20B07DB419D38E1200BF5B5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B07DB319D38E1200BF5B5B /* ViewController.swift */; };
 		20B07DB719D38E1200BF5B5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B07DB519D38E1200BF5B5B /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		0763DA5FD9A34B138C591CC9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		202C277719D3964A009409BF /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		20B07DAC19D38E1200BF5B5B /* ios8_facebook_transitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios8_facebook_transitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B07DB019D38E1200BF5B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B07DB119D38E1200BF5B5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		202C277219D39149009409BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				202C277619D3963D009409BF /* Feed */,
 				202C277319D39153009409BF /* App */,
 			);
 			name = Controllers;
@@ -75,6 +78,30 @@
 				20B07DB319D38E1200BF5B5B /* ViewController.swift */,
 			);
 			name = App;
+			sourceTree = "<group>";
+		};
+		202C277419D39501009409BF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				202C277519D39505009409BF /* Storyboards */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		202C277519D39505009409BF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				20B07DB519D38E1200BF5B5B /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		202C277619D3963D009409BF /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				202C277719D3964A009409BF /* FeedViewController.swift */,
+			);
+			name = Feed;
 			sourceTree = "<group>";
 		};
 		20B07DA319D38E1200BF5B5B = {
@@ -100,8 +127,8 @@
 		20B07DAE19D38E1200BF5B5B /* ios8_facebook_transitions */ = {
 			isa = PBXGroup;
 			children = (
+				202C277419D39501009409BF /* UI */,
 				202C277219D39149009409BF /* Controllers */,
-				20B07DB519D38E1200BF5B5B /* Main.storyboard */,
 				20B07DB819D38E1200BF5B5B /* Images.xcassets */,
 				20B07DBA19D38E1200BF5B5B /* LaunchScreen.xib */,
 				20B07DAF19D38E1200BF5B5B /* Supporting Files */,
@@ -278,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20B07DB419D38E1200BF5B5B /* ViewController.swift in Sources */,
+				202C277819D3964A009409BF /* FeedViewController.swift in Sources */,
 				20B07DB219D38E1200BF5B5B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
