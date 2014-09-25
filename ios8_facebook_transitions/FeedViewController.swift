@@ -37,15 +37,21 @@ class FeedViewController: UIViewController {
     func setupTabBar() {
         self.tabBar.selectedItem = feedTabBarItem
     }
+
+    @IBAction func onPhotoTap(sender: UITapGestureRecognizer) {
+        println("FeedViewController.onPhotoTap")
+        performSegueWithIdentifier("PhotoFromFeed", sender: sender)
+    }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        var destinationViewController = segue.destinationViewController as PhotoViewController
+        var imageView = sender.view as UIImageView
+        destinationViewController.image = imageView.image
     }
-    */
 
 }

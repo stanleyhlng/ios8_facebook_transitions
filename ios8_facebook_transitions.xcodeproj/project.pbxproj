@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		202C277819D3964A009409BF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C277719D3964A009409BF /* FeedViewController.swift */; };
+		209BCA4F19D3F44A00232C34 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BCA4E19D3F44A00232C34 /* PhotoViewController.swift */; };
 		20B07DB219D38E1200BF5B5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B07DB119D38E1200BF5B5B /* AppDelegate.swift */; };
 		20B07DB419D38E1200BF5B5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B07DB319D38E1200BF5B5B /* ViewController.swift */; };
 		20B07DB719D38E1200BF5B5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B07DB519D38E1200BF5B5B /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		0763DA5FD9A34B138C591CC9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		202C277719D3964A009409BF /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		209BCA4E19D3F44A00232C34 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		20B07DAC19D38E1200BF5B5B /* ios8_facebook_transitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios8_facebook_transitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B07DB019D38E1200BF5B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B07DB119D38E1200BF5B5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		202C277219D39149009409BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				209BCA4D19D3F41F00232C34 /* Photo */,
 				202C277619D3963D009409BF /* Feed */,
 				202C277319D39153009409BF /* App */,
 			);
@@ -102,6 +105,14 @@
 				202C277719D3964A009409BF /* FeedViewController.swift */,
 			);
 			name = Feed;
+			sourceTree = "<group>";
+		};
+		209BCA4D19D3F41F00232C34 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				209BCA4E19D3F44A00232C34 /* PhotoViewController.swift */,
+			);
+			name = Photo;
 			sourceTree = "<group>";
 		};
 		20B07DA319D38E1200BF5B5B = {
@@ -305,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20B07DB419D38E1200BF5B5B /* ViewController.swift in Sources */,
+				209BCA4F19D3F44A00232C34 /* PhotoViewController.swift in Sources */,
 				202C277819D3964A009409BF /* FeedViewController.swift in Sources */,
 				20B07DB219D38E1200BF5B5B /* AppDelegate.swift in Sources */,
 			);
