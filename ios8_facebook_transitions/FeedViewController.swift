@@ -10,11 +10,18 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentImageView: UIImageView!
+    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var feedTabBarItem: UITabBarItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         println("FeedViewController.viewDidLoad")
+        setupScrollView()
+        setupTabBar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,7 +29,15 @@ class FeedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func setupScrollView() {
+        self.contentImageView.sizeToFit()
+        self.scrollView.contentSize = self.contentImageView.frame.size
+    }
+    
+    func setupTabBar() {
+        self.tabBar.selectedItem = feedTabBarItem
+    }
+    
     /*
     // MARK: - Navigation
 
