@@ -8,12 +8,13 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var feedTabBarItem: UITabBarItem!
+    var isPresenting = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +51,68 @@ class FeedViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         var destinationViewController = segue.destinationViewController as PhotoViewController
+
+        // passing data
         var imageView = sender.view as UIImageView
         destinationViewController.image = imageView.image
+        
+        // customizing transition
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationViewController.transitioningDelegate = self
+    }
+
+    // MARK: - UIViewControllerTransitioningDelegate
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        isPresenting = false
+        return self
+    }
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        isPresenting = true
+        return self
+    }
+    
+    // MARK: - UIViewControllerAnimatedTransitioning
+
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+        return 0.4
+    }
+    
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        println("animateTransition")
+        
+        var containerView = transitionContext.containerView()
+        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        
+        if isPresenting {
+            containerView.addSubview(toViewController.view)
+            toViewController.view.alpha = 0
+            UIView.animateWithDuration(0.4,
+                animations: {
+                    () -> Void in
+                    toViewController.view.alpha = 1
+                },
+                completion: {
+                    (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+                }
+            )
+        }
+        else {
+            UIView.animateWithDuration(0.4,
+                animations: {
+                    () -> Void in
+                    fromViewController.view.alpha = 0
+                },
+                completion: {
+                    (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+                    fromViewController.view.removeFromSuperview()
+                }
+            )
+        }
     }
 
 }
