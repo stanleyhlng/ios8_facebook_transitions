@@ -14,7 +14,9 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var feedTabBarItem: UITabBarItem!
+    @IBOutlet weak var albumContentView: UIView!
     var isPresenting = false
+    var proxy: UIImageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,8 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
         println("FeedViewController.viewDidLoad")
         setupScrollView()
         setupTabBar()
+        
+        proxy.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +45,24 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
 
     @IBAction func onPhotoTap(sender: UITapGestureRecognizer) {
         println("FeedViewController.onPhotoTap")
+
+        if sender.view is UIImageView {
+            println("sender is UIImageView")
+
+            var delta = self.albumContentView.convertPoint(CGPointZero, toView: view)
+            println("delta = \(delta)")
+            
+            var current = (sender.view as UIImageView)
+            proxy.contentMode = UIViewContentMode.ScaleAspectFit
+            proxy.frame = CGRect(x: current.frame.origin.x + delta.x, y: current.frame.origin.y + delta.y, width: current.frame.width, height: current.frame.height)
+            proxy.image = current.image
+            println("proxy = \(proxy)")
+            
+//            var v = UIView(frame: proxy.frame)
+//            v.backgroundColor = UIColor.redColor()
+//            view.addSubview(v)
+        }
+        
         performSegueWithIdentifier("PhotoFromFeed", sender: sender)
     }
     
@@ -87,16 +109,50 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
         if isPresenting {
+            // toView
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
+            
+//            var v = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+//            v.backgroundColor = UIColor.redColor()
+
+            var window = UIApplication.sharedApplication().keyWindow
+//            window.addSubview(v)
+            proxy.hidden = false
+            proxy.alpha = 1
+            window.addSubview(proxy)
+            
+            (toViewController as PhotoViewController).imageView.alpha = 0
+            
             UIView.animateWithDuration(0.4,
                 animations: {
                     () -> Void in
+                    
                     toViewController.view.alpha = 1
+                    
+//                    v.frame = window.frame
+                    self.proxy.frame = (toViewController as PhotoViewController).imageView.frame
                 },
                 completion: {
                     (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
+  
+                    println("animateTransition:completion")
+                    (toViewController as PhotoViewController).imageView.alpha = 1
+
+                    UIView.animateWithDuration(1.0,
+                        animations: {
+                            () -> Void in
+//                            v.alpha = 0
+                            self.proxy.alpha = 0
+                        },
+                        completion: {
+                            (finished: Bool) -> Void in
+//                            v.removeFromSuperview()
+                            self.proxy.removeFromSuperview()
+                            
+                            transitionContext.completeTransition(true)
+                        }
+                    )
                 }
             )
         }
@@ -108,8 +164,11 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
                 },
                 completion: {
                     (finished: Bool) -> Void in
+                    
+                    println("animateTransition:completion")
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
+
                 }
             )
         }
