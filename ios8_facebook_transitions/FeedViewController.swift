@@ -36,6 +36,7 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     func setupScrollView() {
         self.contentImageView.sizeToFit()
+        self.scrollView.contentInset = UIEdgeInsets(top: 110, left: 0, bottom: 50, right: 0)
         self.scrollView.contentSize = self.contentImageView.frame.size
     }
     
@@ -109,50 +110,61 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
         if isPresenting {
-            // toView
-            containerView.addSubview(toViewController.view)
-            toViewController.view.alpha = 0
-            
-//            var v = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-//            v.backgroundColor = UIColor.redColor()
 
+            // initialize proxy image
             var window = UIApplication.sharedApplication().keyWindow
-//            window.addSubview(v)
             proxy.hidden = false
             proxy.alpha = 1
             window.addSubview(proxy)
-            
+
+            // initialize target view
+            toViewController = toViewController as PhotoViewController
+            containerView.addSubview(toViewController.view)
+            toViewController.view.alpha = 0
             (toViewController as PhotoViewController).imageView.alpha = 0
             
             UIView.animateWithDuration(0.4,
                 animations: {
                     () -> Void in
-                    
+
+                    // animate proxy image
+                    self.proxy.frame = (toViewController as PhotoViewController).imageView.frame
+
+                    // animate target view
                     toViewController.view.alpha = 1
                     
-//                    v.frame = window.frame
-                    self.proxy.frame = (toViewController as PhotoViewController).imageView.frame
+                    // hide status bar
+                    UIApplication.sharedApplication().statusBarHidden = true
                 },
                 completion: {
                     (finished: Bool) -> Void in
   
                     println("animateTransition:completion")
-                    (toViewController as PhotoViewController).imageView.alpha = 1
 
-                    UIView.animateWithDuration(1.0,
+                    // complete proxy image
+                    UIView.animateWithDuration(0.2,
                         animations: {
                             () -> Void in
-//                            v.alpha = 0
                             self.proxy.alpha = 0
                         },
                         completion: {
                             (finished: Bool) -> Void in
-//                            v.removeFromSuperview()
                             self.proxy.removeFromSuperview()
                             
-                            transitionContext.completeTransition(true)
+                            UIView.animateWithDuration(0.4,
+                                animations: {
+                                    () -> Void in
+                                    (toViewController as PhotoViewController).showControls()
+                                },
+                                completion: {
+                                    (finished: Bool) -> Void in
+                                    transitionContext.completeTransition(true)
+                            })
                         }
                     )
+                    
+                    // complete target view
+                    (toViewController as PhotoViewController).imageView.alpha = 1
                 }
             )
         }

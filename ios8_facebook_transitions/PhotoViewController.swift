@@ -10,7 +10,11 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var actionsImageView: UIImageView!
     var image: UIImage!
     
     override func viewDidLoad() {
@@ -19,6 +23,8 @@ class PhotoViewController: UIViewController {
         // Do any additional setup after loading the view.
         println("PhotoViewController.viewDidLoad")
         setupImageView()
+        setupScrollView()
+        hideControls()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,8 +38,27 @@ class PhotoViewController: UIViewController {
         })
     }
     
+    func setupControls() {
+        hideControls()
+    }
+    
     func setupImageView() {
         imageView.image = image
+    }
+    
+    func setupScrollView() {
+        contentView.sizeToFit()
+        scrollView.contentSize = contentView.frame.size
+    }
+    
+    func hideControls() {
+        doneButton.alpha = 0
+        actionsImageView.alpha = 0
+    }
+    
+    func showControls() {
+        doneButton.alpha = 1
+        actionsImageView.alpha = 1
     }
     
     /*
