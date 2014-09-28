@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController {
+class PhotoViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
@@ -49,6 +49,7 @@ class PhotoViewController: UIViewController {
     func setupScrollView() {
         contentView.sizeToFit()
         scrollView.contentSize = contentView.frame.size
+        scrollView.delegate = self
     }
     
     func hideControls() {
@@ -59,6 +60,48 @@ class PhotoViewController: UIViewController {
     func showControls() {
         doneButton.alpha = 1
         actionsImageView.alpha = 1
+    }
+    
+    func convertValue(value: Float, r1Min: Float, r1Max: Float, r2Min: Float, r2Max: Float) -> Float {
+        var ratio = (r2Max - r2Min) / (r1Max - r1Min)
+        return value * ratio + r2Min - r1Min * ratio
+    }
+    
+    // MARK: - UIScrollViewDelegate
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        println("PhotoViewController.scrollViewDidScroll")
+        
+        var offset = Float(scrollView.contentOffset.y)
+        println("offset = \(offset)")
+        
+        var alpha = 1 - abs(convertValue(offset, r1Min: 0, r1Max: 300, r2Min: 0, r2Max: 1))
+        println("alpha = \(alpha)")
+        
+        scrollView.backgroundColor = UIColor(white: 0, alpha: CGFloat(alpha))
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        println("PhotoViewController.scrollViewWillBeginDragging")
+        UIView.animateWithDuration(0.4,
+            animations: {
+                () -> Void in
+                self.hideControls()
+            },
+            completion: nil
+        )
+    }
+    
+    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        println("PhotoViewController.scrollViewWillEndDragging")
+        println("PhotoViewController.scrollViewWillBeginDragging")
+        UIView.animateWithDuration(0.4,
+            animations: {
+                () -> Void in
+                self.showControls()
+            },
+            completion: nil
+        )
     }
     
     /*
