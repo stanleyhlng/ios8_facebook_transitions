@@ -57,6 +57,7 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
             proxy.contentMode = UIViewContentMode.ScaleAspectFit
             proxy.frame = CGRect(x: current.frame.origin.x + delta.x, y: current.frame.origin.y + delta.y, width: current.frame.width, height: current.frame.height)
             proxy.image = current.image
+            proxy.tag = current.tag
             println("proxy = \(proxy)")
             
 //            var v = UIView(frame: proxy.frame)
@@ -122,6 +123,7 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
             (toViewController as PhotoViewController).imageView.alpha = 0
+            (toViewController as PhotoViewController).imageView.tag = proxy.tag
             
             UIView.animateWithDuration(0.4,
                 animations: {
@@ -135,11 +137,12 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
                     
                     // hide status bar
                     UIApplication.sharedApplication().statusBarHidden = true
+                    
                 },
                 completion: {
                     (finished: Bool) -> Void in
   
-                    println("animateTransition:completion")
+                    println("1. animateTransition:completion")
 
                     // complete proxy image
                     UIView.animateWithDuration(0.2,
@@ -169,15 +172,32 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
             )
         }
         else {
+            println((fromViewController as PhotoViewController).imageView)
+            
+            // initialize proxy image
+            var window = UIApplication.sharedApplication().keyWindow
+            var v = UIView(frame: (fromViewController as PhotoViewController).imageView.frame)
+            v.backgroundColor = UIColor.redColor()
+//            println("v = \(v)")
+//            window.addSubview(v)
+            
             UIView.animateWithDuration(0.4,
                 animations: {
                     () -> Void in
+                    
+                    // animate proxy image
+                    
+                    // animate target view
                     fromViewController.view.alpha = 0
+
+                    // show status bar
+                    UIApplication.sharedApplication().statusBarHidden = false
+
                 },
                 completion: {
                     (finished: Bool) -> Void in
                     
-                    println("animateTransition:completion")
+                    println("2. animateTransition:completion")
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
 

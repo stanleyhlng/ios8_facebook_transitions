@@ -79,6 +79,11 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
         println("alpha = \(alpha)")
         
         scrollView.backgroundColor = UIColor(white: 0, alpha: CGFloat(alpha))
+        
+        // dismiss when abs(offset.y) > 100
+        if abs(offset) > 100 {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
