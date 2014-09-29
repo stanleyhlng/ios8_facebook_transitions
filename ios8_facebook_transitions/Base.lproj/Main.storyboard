@@ -25,13 +25,6 @@
                                     <view contentMode="top" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ac-if-v5m">
                                         <rect key="frame" x="0.0" y="83" width="320" height="311"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wedding1" translatesAutoresizingMaskIntoConstraints="NO" id="Qf8-A9-oNi">
-                                                <rect key="frame" x="0.0" y="0.0" width="158" height="156"/>
-                                                <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="Nct-3Z-DWy" appends="YES" id="Lhd-cK-5n1"/>
-                                                </connections>
-                                            </imageView>
                                             <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wedding2" translatesAutoresizingMaskIntoConstraints="NO" id="A2s-RG-oMU">
                                                 <rect key="frame" x="0.0" y="158" width="158" height="154"/>
                                                 <gestureRecognizers/>
@@ -58,6 +51,13 @@
                                                 <gestureRecognizers/>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="b1K-we-bhn" appends="YES" id="Syh-5E-b4O"/>
+                                                </connections>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wedding1" translatesAutoresizingMaskIntoConstraints="NO" id="Qf8-A9-oNi">
+                                                <rect key="frame" x="0.0" y="0.0" width="158" height="156"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Nct-3Z-DWy" appends="YES" id="Lhd-cK-5n1"/>
                                                 </connections>
                                             </imageView>
                                         </subviews>
@@ -94,6 +94,11 @@
                         <outlet property="albumContentView" destination="2ac-if-v5m" id="DWL-wQ-sBc"/>
                         <outlet property="contentImageView" destination="3fo-Fn-A2h" id="hyq-eg-aVm"/>
                         <outlet property="feedTabBarItem" destination="yzK-Zu-RZN" id="NZi-rf-JeF"/>
+                        <outlet property="photo1ImageView" destination="Qf8-A9-oNi" id="MWx-CZ-zLE"/>
+                        <outlet property="photo2ImageView" destination="A2s-RG-oMU" id="3wY-Ic-Hdl"/>
+                        <outlet property="photo3ImageView" destination="gig-ZS-uAE" id="X6X-dK-SNh"/>
+                        <outlet property="photo4ImageView" destination="3X1-FE-Rn8" id="X1D-8D-J0j"/>
+                        <outlet property="photo5ImageView" destination="DqL-8K-mzV" id="Hee-Qc-Ycc"/>
                         <outlet property="scrollView" destination="i5b-h5-Oq7" id="DXW-IT-jpR"/>
                         <outlet property="tabBar" destination="YTi-Pa-NNh" id="e0P-LK-p0L"/>
                         <segue destination="icb-9e-kEB" kind="modal" identifier="PhotoFromFeed" id="vof-zm-24a"/>
@@ -137,17 +142,32 @@
                         <viewControllerLayoutGuide type="bottom" id="fZ3-td-OSe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gO4-gZ-13A">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1600" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hvz-t0-cW9">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView hidden="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s3c-vJ-vBC">
+                                <rect key="frame" x="0.0" y="54" width="320" height="467"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvz-t0-cW9">
+                                <rect key="frame" x="0.0" y="0.0" width="1600" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8pN-d5-whI">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="576"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1600" height="576"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LdP-bF-k0u">
-                                                <rect key="frame" x="0.0" y="55" width="320" height="467"/>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R5w-qJ-0Ey">
+                                                <rect key="frame" x="320" y="55" width="320" height="467"/>
+                                            </imageView>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PPY-6G-gEt">
+                                                <rect key="frame" x="640" y="55" width="320" height="467"/>
+                                            </imageView>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ShN-qy-qbr">
+                                                <rect key="frame" x="960" y="54" width="320" height="467"/>
+                                            </imageView>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WlG-Ma-Pif">
+                                                <rect key="frame" x="1280" y="54" width="320" height="467"/>
+                                            </imageView>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LdP-bF-k0u">
+                                                <rect key="frame" x="0.0" y="54" width="320" height="467"/>
                                             </imageView>
                                         </subviews>
                                     </view>
@@ -160,7 +180,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onDon:" destination="icb-9e-kEB" eventType="touchUpInside" id="Nd0-uG-mBq"/>
+                                    <action selector="onDone:" destination="icb-9e-kEB" eventType="touchUpInside" id="jlX-dD-nvo"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo_actions" translatesAutoresizingMaskIntoConstraints="NO" id="m6r-4r-WSa">
@@ -168,23 +188,30 @@
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Hvz-t0-cW9" firstAttribute="top" secondItem="gO4-gZ-13A" secondAttribute="top" id="AdR-hu-Gcw"/>
-                            <constraint firstItem="Hvz-t0-cW9" firstAttribute="leading" secondItem="gO4-gZ-13A" secondAttribute="leading" id="Y9p-IW-Brb"/>
-                            <constraint firstItem="fZ3-td-OSe" firstAttribute="top" secondItem="Hvz-t0-cW9" secondAttribute="bottom" id="dNI-ET-KO5"/>
-                            <constraint firstAttribute="trailing" secondItem="Hvz-t0-cW9" secondAttribute="trailing" id="saQ-c5-Jk5"/>
+                            <constraint firstItem="Hvz-t0-cW9" firstAttribute="leading" secondItem="gO4-gZ-13A" secondAttribute="leading" id="HB5-bz-MfR"/>
+                            <constraint firstItem="Hvz-t0-cW9" firstAttribute="top" secondItem="gO4-gZ-13A" secondAttribute="top" id="Hju-ER-5Ob"/>
+                            <constraint firstItem="fZ3-td-OSe" firstAttribute="top" secondItem="Hvz-t0-cW9" secondAttribute="bottom" id="Kio-hw-Bob"/>
+                            <constraint firstAttribute="trailing" secondItem="Hvz-t0-cW9" secondAttribute="trailing" id="ofK-Dg-mRV"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1600" height="568"/>
                     <connections>
                         <outlet property="actionsImageView" destination="m6r-4r-WSa" id="zzQ-gX-3jY"/>
                         <outlet property="contentView" destination="8pN-d5-whI" id="KZC-oy-Xns"/>
                         <outlet property="doneButton" destination="uT9-9k-vg5" id="eDb-Gk-cUy"/>
-                        <outlet property="imageView" destination="LdP-bF-k0u" id="wPk-iu-JUQ"/>
+                        <outlet property="photo1ImageView" destination="LdP-bF-k0u" id="9tO-ou-jcy"/>
+                        <outlet property="photo2ImageView" destination="R5w-qJ-0Ey" id="3js-2I-w1J"/>
+                        <outlet property="photo3ImageView" destination="PPY-6G-gEt" id="1g4-mL-iB1"/>
+                        <outlet property="photo4ImageView" destination="ShN-qy-qbr" id="hjM-Nz-Ubk"/>
+                        <outlet property="photo5ImageView" destination="WlG-Ma-Pif" id="ML6-oz-a8F"/>
+                        <outlet property="proxyImageView" destination="s3c-vJ-vBC" id="87u-Zj-XkG"/>
                         <outlet property="scrollView" destination="Hvz-t0-cW9" id="iKl-R0-Oqy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xo6-aD-rbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="524" y="128"/>
+            <point key="canvasLocation" x="1104" y="128"/>
         </scene>
     </scenes>
     <resources>

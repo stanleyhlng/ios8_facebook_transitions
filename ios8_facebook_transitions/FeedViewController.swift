@@ -15,6 +15,11 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var feedTabBarItem: UITabBarItem!
     @IBOutlet weak var albumContentView: UIView!
+    @IBOutlet weak var photo1ImageView: UIImageView!
+    @IBOutlet weak var photo2ImageView: UIImageView!
+    @IBOutlet weak var photo3ImageView: UIImageView!
+    @IBOutlet weak var photo4ImageView: UIImageView!
+    @IBOutlet weak var photo5ImageView: UIImageView!
     var isPresenting = false
     var proxy: UIImageView = UIImageView()
     
@@ -77,8 +82,17 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
         var destinationViewController = segue.destinationViewController as PhotoViewController
 
         // passing data
-        var imageView = sender.view as UIImageView
-        destinationViewController.image = imageView.image
+        //var imageView = sender.view as UIImageView
+        //destinationViewController.image = imageView.image
+        var images: [UIImage] = []
+        images.append(photo1ImageView.image!)
+        images.append(photo2ImageView.image!)
+        images.append(photo3ImageView.image!)
+        images.append(photo4ImageView.image!)
+        images.append(photo5ImageView.image!)
+        destinationViewController.images = images
+        
+        destinationViewController.page = proxy.tag - 1
         
         // customizing transition
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
@@ -122,16 +136,15 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
             toViewController = toViewController as PhotoViewController
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
-            (toViewController as PhotoViewController).imageView.alpha = 0
-            (toViewController as PhotoViewController).imageView.tag = proxy.tag
+            (toViewController as PhotoViewController).contentView.alpha = 0
             
             UIView.animateWithDuration(0.4,
                 animations: {
                     () -> Void in
 
                     // animate proxy image
-                    self.proxy.frame = (toViewController as PhotoViewController).imageView.frame
-
+                    self.proxy.frame = (toViewController as PhotoViewController).proxyImageView.frame
+                    
                     // animate target view
                     toViewController.view.alpha = 1
                     
@@ -167,32 +180,77 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
                     )
                     
                     // complete target view
-                    (toViewController as PhotoViewController).imageView.alpha = 1
+                    (toViewController as PhotoViewController).contentView.alpha = 1
                 }
             )
         }
         else {
-            println((fromViewController as PhotoViewController).imageView)
+            //println((fromViewController as PhotoViewController).imageView)
             
             // initialize proxy image
             var window = UIApplication.sharedApplication().keyWindow
-            var v = UIView(frame: (fromViewController as PhotoViewController).imageView.frame)
-            v.backgroundColor = UIColor.redColor()
-//            println("v = \(v)")
-//            window.addSubview(v)
+            proxy = (fromViewController as PhotoViewController).proxy
+            proxy.hidden = false
+            proxy.alpha = 1
+            proxy.clipsToBounds = true
+            window.addSubview(proxy)
             
+            var delta = self.albumContentView.convertPoint(CGPointZero, toView: view)
+            println("delta = \(delta)")
+
             UIView.animateWithDuration(0.4,
                 animations: {
                     () -> Void in
                     
                     // animate proxy image
+                    self.proxy.alpha = 0.8
+                    self.proxy.contentMode = UIViewContentMode.ScaleAspectFit
+                    if self.proxy.tag == 1 {
+                        self.proxy.frame = CGRect(
+                            x: self.photo1ImageView.frame.origin.x + delta.x,
+                            y: self.photo1ImageView.frame.origin.y + delta.y,
+                            width: self.photo1ImageView.frame.width,
+                            height: self.photo1ImageView.frame.height
+                        )
+                    }
+                    else if self.proxy.tag == 2 {
+                        self.proxy.frame = CGRect(
+                            x: self.photo2ImageView.frame.origin.x + delta.x,
+                            y: self.photo2ImageView.frame.origin.y + delta.y,
+                            width: self.photo2ImageView.frame.width,
+                            height: self.photo2ImageView.frame.height
+                        )
+                    }
+                    else if self.proxy.tag == 3 {
+                        self.proxy.frame = CGRect(
+                            x: self.photo3ImageView.frame.origin.x + delta.x,
+                            y: self.photo3ImageView.frame.origin.y + delta.y,
+                            width: self.photo3ImageView.frame.width,
+                            height: self.photo3ImageView.frame.height
+                        )
+                    }
+                    else if self.proxy.tag == 4 {
+                        self.proxy.frame = CGRect(
+                            x: self.photo4ImageView.frame.origin.x + delta.x,
+                            y: self.photo4ImageView.frame.origin.y + delta.y,
+                            width: self.photo4ImageView.frame.width,
+                            height: self.photo4ImageView.frame.height
+                        )
+                    }
+                    else if self.proxy.tag == 5 {
+                        self.proxy.frame = CGRect(
+                            x: self.photo5ImageView.frame.origin.x + delta.x,
+                            y: self.photo5ImageView.frame.origin.y + delta.y,
+                            width: self.photo5ImageView.frame.width,
+                            height: self.photo5ImageView.frame.height
+                        )
+                    }
                     
                     // animate target view
                     fromViewController.view.alpha = 0
 
                     // show status bar
                     UIApplication.sharedApplication().statusBarHidden = false
-
                 },
                 completion: {
                     (finished: Bool) -> Void in
@@ -200,6 +258,8 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
                     println("2. animateTransition:completion")
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
+                    
+                    self.proxy.removeFromSuperview()
 
                 }
             )
